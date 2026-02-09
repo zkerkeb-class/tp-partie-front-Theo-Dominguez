@@ -1,19 +1,19 @@
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
+import Home from './pages/Home'
+import PokemonDetail from './pages/PokemonDetail'
+import CreatePokemon from './pages/CreatePokemon'
+import TeamBar from './components/TeamBar'
 
-import Title from './components/title'
-import Counter from './components/counter'
-import PokeList from './components/pokelist'
 function App() {
-
   return (
-    <div>
-      {/* <Title  label="Titre 1" />
-      <Title label="Titre 2" />
-      <Title label="Titre 3" />
-      <Title label="Titre 4" />
-      <Title/> */}
-      <Counter/>
-      <PokeList/>
+    <div className="app">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/pokemon/:id" element={<PokemonDetail />} />
+        <Route path="/create" element={<CreatePokemon />} />
+      </Routes>
+      <TeamBar />
     </div>
   )
 }
