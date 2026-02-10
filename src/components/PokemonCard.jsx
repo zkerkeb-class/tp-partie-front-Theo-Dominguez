@@ -6,7 +6,6 @@ import '../styles/types.css';
 
 const PokemonCard = ({ pokemon }) => {
   const navigate = useNavigate();
-  const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [notification, setNotification] = useState(null);
   const { addToTeam, isInTeam } = useTeam();
 
@@ -26,25 +25,6 @@ const PokemonCard = ({ pokemon }) => {
 
   const handleImageError = (e) => {
     e.target.src = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png';
-  };
-
-  const handleMouseMove = (e) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = ((y - centerY) / centerY) * -8;
-    const rotateY = ((x - centerX) / centerX) * 8;
-
-    setRotation({ x: rotateX, y: rotateY });
-  };
-
-  const handleMouseLeave = () => {
-    setRotation({ x: 0, y: 0 });
   };
 
   const primaryType = pokemon.type[0]?.toLowerCase() || 'normal';
@@ -74,11 +54,6 @@ const PokemonCard = ({ pokemon }) => {
     <div
       className={`pokemon-card pokemon-card-${primaryType}`}
       onClick={handleClick}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`
-      }}
     >
       {notification && (
         <div className={`card-notification ${notification.success ? 'success' : 'error'}`}>

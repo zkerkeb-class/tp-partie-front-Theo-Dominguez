@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 40px;
-  row-gap: 70px;
+  row-gap: 120px;
   padding: 40px 0;
   max-width: 1400px;
   margin: 0 auto;
@@ -21,7 +21,7 @@
   .pokemon-list {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 30px;
-    row-gap: 60px;
+    row-gap: 90px;
   }
 }
 
@@ -29,7 +29,7 @@
   .pokemon-list {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 24px;
-    row-gap: 50px;
+    row-gap: 75px;
   }
 }
 
