@@ -8,13 +8,30 @@
 
 ---
 
-##  Description
 
-Application web interactive de Pokédex développée avec React, permettant de consulter, rechercher, filtrer et gérer une collection de Pokémon. L'interface s'inspire des cartes Pokémon TCG Base Set originales avec un design moderne et des effets glassmorphism.
+##  Fonctionnalités Bonus
+- **Barre de recherche** : Recherche de Pokémon par nom dans toutes les langues
+  ![alt text](image-2.png)
+- **Filtre par type** : Filtrage client-side par type sur tous les Pokémons 
+  ![alt text](image-1.png)
+- **Filtre par HP/stats** : Filtrage client-side par HP ou les stats des Pokémons
+  ![alt text](image.png)
+- **Creation d'une équipe pokemon** : Création d'une équipe de 6 Pokémons
+  - 6 slots visuels
+  - Miniatures des Pokémon
+  - Bouton de retrait par Pokémon
+  - Bouton pour vider toute l'équipe
+  - Compteur (ex: "Mon Équipe (3/6)")
+  ![alt text](image-3.png)
+- **Effet hover sur les cartes** : Quand on passe sur une carte elle bouge
+- **Notifications** : Feedback visuel lors de l'ajout (succès/erreur)
+  ![alt text](image-4.png)
+- **Création de Pokémon**
+  - Formulaire complet : Création de nouveaux Pokémon personnalisés
+  - Upload d'image : Possibilité d'ajouter une image
+  - Validation : Vérification des données saisies
 
----
 
-##  Fonctionnalités
 
 ###  Page d'Accueil
 
@@ -28,7 +45,7 @@ Application web interactive de Pokédex développée avec React, permettant de c
 
 ###  Recherche et Filtrage
 
-- **Barre de recherche** : Recherche de Pokémon par nom (français)
+- **Barre de recherche** : Recherche de Pokémon par nom 
 - **Filtre par type** : Filtrage client-side par type de Pokémon
 - **Pagination** : Navigation entre les pages (20 Pokémon par page)
 - **Compteur de résultats** : Affichage du nombre de Pokémon trouvés
@@ -63,24 +80,7 @@ Application web interactive de Pokédex développée avec React, permettant de c
 - **Design glassmorphism** : Effets de flou et transparence
 - **Background personnalisé** : Image de fond immersive
 - **Animations fluides** : Transitions et effets visuels
-- **Responsive design** : Adaptation mobile, tablette et desktop
-- **Thème sombre** : Interface optimisée pour une expérience agréable
 
----
-
-##  Technologies Utilisées
-
-### Frontend
-- **React 18** - Bibliothèque UI
-- **React Router DOM** - Gestion de la navigation
-- **Context API** - Gestion d'état globale (Team Builder)
-- **CSS3** - Styling avec glassmorphism et animations
-- **Vite** - Build tool et dev server
-
-### Backend (requis)
-- **Node.js** - Runtime JavaScript
-- **Express** - Framework backend
-- **API REST** - Communication avec le frontend
 
 ---
 
@@ -169,6 +169,8 @@ tp-partie-front-Theo-Dominguez/
 │   │   ├── PokemonCard.jsx
 │   │   ├── PokemonForm.jsx
 │   │   ├── PokemonList.jsx
+│   │   ├── PokemonForm.jsx
+│   │   ├── PokemonList.jsx
 │   │   ├── SearchBar.jsx
 │   │   ├── TeamBar.jsx      # Barre d'équipe persistante
 │   │   ├── TypeFilter.jsx
@@ -195,47 +197,6 @@ tp-partie-front-Theo-Dominguez/
 └── README.md
 ```
 
----
-
-##  Fonctionnalités Avancées
-
-### Gestion d'État avec Context API
-
-Le **Team Builder** utilise l'API Context de React pour gérer l'état global de l'équipe :
-
-- **TeamContext.jsx** : Fournit les fonctions `addToTeam`, `removeFromTeam`, `clearTeam`, `isInTeam`
-- **TeamProvider** : Wrapper qui rend le contexte disponible dans toute l'application
-- **LocalStorage** : Persistance automatique de l'équipe
-
-### Persistance des Données
-
-- L'équipe de Pokémon est sauvegardée dans le **LocalStorage** du navigateur
-- Les données persistent même après fermeture du navigateur
-- Chargement automatique au démarrage de l'application
-
-### Design Responsive
-
-Breakpoints adaptés pour différentes tailles d'écran :
-
-- **Desktop** : 4 cartes par ligne (> 1400px)
-- **Tablette large** : 3 cartes par ligne (1024px - 1400px)
-- **Tablette** : 2 cartes par ligne (600px - 1024px)
-- **Mobile** : 1 carte par ligne (< 600px)
-
----
-
-##  Personnalisation
-
-### Couleurs par Type
-
-Chaque type de Pokémon possède sa propre palette de couleurs :
-
-- **Fire** : #F08030
-- **Water** : #6890F0
-- **Grass** : #78C850
-- **Electric** : #F8D030
-- **Psychic** : #F080FF
-- Et 13 autres types...
 
 ### Background
 
@@ -245,25 +206,7 @@ Pour changer le fond, remplacez ce fichier dans le backend.
 
 ---
 
-##  Dépannage
 
-### Le site ne charge pas les Pokémon
-
-- Vérifiez que le backend est bien lancé sur `http://localhost:3000`
-- Vérifiez la console du navigateur pour les erreurs CORS
-- Assurez-vous que la base de données contient des Pokémon
-
-### Les images ne s'affichent pas
-
-- Vérifiez que le dossier `/assets/pokemons/` existe dans le backend
-- Vérifiez que les images ont les bons noms (correspondant aux IDs)
-
-### L'équipe ne se sauvegarde pas
-
-- Vérifiez que le LocalStorage n'est pas désactivé dans votre navigateur
-- Essayez de vider le cache du navigateur
-
----
 
 ##  Auteur
 
@@ -272,4 +215,4 @@ Pour changer le fond, remplacez ce fichier dans le backend.
 ---
 
 
-**Bon jeu sur le Pokédex de Theo !**
+**Bon jeu sur le Pokédex Theo !**
